@@ -12,6 +12,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ColaboradoresComponent } from './colaboradores/colaboradores.component';
 import { ColaboradoresService } from './services/colaboradores.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardService } from './services/dashboard.service';
+import { ShortNumber } from './pipes/short-number.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     DashboardComponent,
     LoginComponent,
-    ColaboradoresComponent
+    ColaboradoresComponent,
+    ShortNumber
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,10 @@ import { HttpClientModule } from '@angular/common/http';
       echarts: () => import('echarts')
     })
   ],
-  providers: [ColaboradoresService],
+  providers: [
+    ColaboradoresService,
+    DashboardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -35,6 +35,25 @@
                         <div class="row chart-content">
                             <h5>Orçado x Realizado - Budget</h5>
                             <div echarts [options]="optionsChart" [loading]="isLoading" theme="macarons" class="demo-chart"></div>
+                            <div class="row dash-numbers">
+                                <hr>
+                                <div class="col-3 vert-line">
+                                    <span class="small-letter">Média desv. meta</span><br/>
+                                    <b class="font">{{this.dashData.mediaMensalDesvio}}%</b>
+                                </div>
+                                <div class="col-3 vert-line">
+                                    <span class="small-letter">Médio real. mensal</span><br/>
+                                    <b class="font">R$ {{this.dashData.medioRealizadoMensal | ShortNumber }}</b>
+                                </div>
+                                <div class="col-3 vert-line">
+                                    <span class="small-letter">Realizado anual</span><br/>
+                                    <b class="font">R$ {{this.dashData.realizadoAnual | ShortNumber }}</b>
+                                </div>
+                                <div class="col-3">
+                                    <span class="small-letter">Orçado anual</span><br/>
+                                    <b class="font">R$ {{this.dashData.orcadoAnual | ShortNumber }}</b>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-6">
@@ -43,41 +62,26 @@
                             <span class="small-letter">Critérios: Skills compatíveis com busca de mercado</span>
                             <table class="table">
                                 <tbody>
-                                    <tr>
-                                        <td class="font">Mariana Barros</td>
-                                        <td class="font">Gerente Senior</td>
-                                        <td><button type="button" class="btn btn-warning font">Urgente</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font">Francisco Freitas</td>
-                                        <td class="font">Gerente</td>
-                                        <td class="font"><button type="button" class="btn btn-warning font">Urgente</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font">Bruno de Melo</td>
-                                        <td class="font">Analista Senior</td>
-                                        <td class="font"><button type="button" class="btn btn-warning font">Urgente</button></td>
+                                    <tr *ngFor="let colab of this.colaboradoresData">
+                                        <td class="font">{{colab.name}}</td>
+                                        <td class="font">{{colab.occupation}}</td>
+                                        <td>
+                                            <span [ngClass]="{'active': colab.status == 'ACTIVE', 
+                                            'license' : colab.status === 'LICENSE',
+                                            'inactive' : colab.status === 'INACTIVE' }">{{colab.status}}</span>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
-
                         </div>
                         <div class="row chart-content">
                             <h5>Hotskills</h5>
                             <span class="small-letter">Total de vagas buscadas (1238)</span>
                             <table class="table">
                                 <tbody>
-                                    <tr>
-                                        <td class="font">Business Intelligence</td>
-                                        <td class="font grey-font">41%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font">Scrum - Agile</td>
-                                        <td class="font grey-font">32%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font">Devops</td>
-                                        <td class="font grey-font">14%</td>
+                                    <tr *ngFor="let hotskill of this.hotskillsData">
+                                        <td class="font">{{hotskill.title}}</td>
+                                        <td class="font grey-font">{{hotskill.rate}}%</td>
                                     </tr>
                                 </tbody>
                             </table>

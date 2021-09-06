@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EChartsOption } from 'echarts';
+import { ColaboradoresService } from '../services/colaboradores.service';
+import { DashboardService } from '../services/dashboard.service';
+import { HotskillService } from '../services/hotskill.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,15 +10,44 @@ import { EChartsOption } from 'echarts';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  isLoading = true;
+  isLoading = false;
+  public dashData: any;
+  public orcadoData: Array<number> = [];
+  public realizadoData: Array<number> = [];
+  public colaboradoresData: any;
+  public hotskillsData: any;
 
-  constructor() { }
+
+  constructor(
+    private _serviceDash: DashboardService,
+    private _serviceColab: ColaboradoresService,
+    private _serviceHotskill: HotskillService) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.isLoading = false;
+    //Dashboard
+    this._serviceDash.getDashboard().subscribe(
+      (dados: any) => {
+        this.dashData = dados;
 
-    }, 5000);
+        this.dashData.series.forEach((element: any) => {
+          if (element.type == 'orcado')
+            this.orcadoData.push(element.value);
+          else
+            this.realizadoData.push(element.value);
+        });
+      });
+
+    //Colaboradores
+    this._serviceColab.getColaboradores().subscribe(
+      (dados: any) => {
+        this.colaboradoresData = dados.splice(4, 3);
+      });
+
+    //Hotskills
+    this._serviceHotskill.getHotskills().subscribe(
+      (dados: any) => {
+        this.hotskillsData = dados;
+      });
   }
 
   optionsChart: EChartsOption = {
@@ -57,7 +89,7 @@ export class DashboardComponent implements OnInit {
         stack: 'counts',
         color: '#9FA2B4',
         // areaStyle: { normal: {} },
-        data: [120, 132, 101, 134, 90, 230, 210, 110, 170, 80, 150, 160]
+        data: this.orcadoData
       },
       {
         name: 'Realizado',
@@ -65,7 +97,7 @@ export class DashboardComponent implements OnInit {
         stack: 'counts',
         color: '#FFDB00',
         // areaStyle: { normal: {} },
-        data: [220, 182, 191, 234, 290, 330, 310, 270, 290, 320, 210, 280 ]
+        data: this.realizadoData
       }
     ]
   };

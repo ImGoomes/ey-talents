@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'material-icons/iconfont/material-icons.css';
+@import url('https://fonts.googleapis.com/css?family=Mulish&display=swap');
+body {
+    background-color: #F7F8FC !important;
+}

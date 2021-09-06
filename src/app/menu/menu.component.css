@@ -1,0 +1,31 @@
+.menu-main {
+    background-color: #3C444C !important;
+    width: 280px !important;
+    position: fixed;
+    height: 100%;
+}
+
+.logo {
+    height: 3em !important;
+    margin-left: 20%;
+}
+
+.material-icons {
+    font-size: 1.5em;
+    color: #9FA2B4;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.menu-color {
+    color: #9FA2B4;
+    font-family: 'Mulish', sans-serif;
+}
+
+.active-menu {
+    background-color: rgba(159, 162, 180, 0.2) !important;
+    color: #DDE2FF !important;
+}

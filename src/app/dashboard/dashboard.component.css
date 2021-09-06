@@ -1,0 +1,93 @@
+.main {
+    position: relative;
+    padding-left: 16%;
+    padding-top: 1%;
+}
+
+.title {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.title h3 {
+    color: #3E4E6A;
+}
+
+h3,
+h5 {
+    font-family: 'Mulish', sans-serif;
+}
+
+.card-content h5 {
+    color: #9FA2B4;
+}
+
+.card-content {
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 2px solid #dfe0eb;
+    background-color: #FFF;
+    text-align: center;
+    padding: 1em;
+    /* margin-right: 8.5em; */
+    margin-bottom: 1em;
+    margin-right: 1em;
+    max-width: 23%;
+}
+
+.capital-letter {
+    font-family: 'Mulish', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #252733;
+}
+
+.capital-letter-2 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #252733;
+}
+
+.small-letter {
+    color: #9FA2B4;
+}
+
+.ml-25 {
+    margin-left: 25%
+}
+
+.demo-chart {
+    height: 400px;
+}
+
+.chart-content {
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 2px solid #dfe0eb;
+    background-color: #FFF;
+    padding: 1em;
+    /* margin-right: 8.5em; */
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+.chart-content h5 {
+    color: #252733;
+}
+
+.table {
+    font-family: 'Mulish', sans-serif;
+    color: #252733 !important;
+    margin-top: 1em;
+}
+
+.grey-font {
+    color: #9FA2B4;
+}
+
+.font {
+    font-size: 0.8rem !important;
+}

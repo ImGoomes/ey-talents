@@ -1,0 +1,47 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="ml-25 row">
+    <div class="col">
+        <div class="title">
+            <h3>Colaboradores</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col table-content">
+            <h5>Colaboradores em risco</h5>
+            <span class="small-letter">Critérios: Skills compatíveis com busca de mercado</span>
+            <div class="row" *ngIf="!this.colaboradores || this.colaboradores.length <= 0">
+                <div class="spinner-border text-warning" role="status">
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Localização</th>
+                        <th scope="col">Status</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let colab of this.colaboradores">
+                        <td>
+                            <img [src]="colab.picture" alt="" width="32" height="32" class="rounded-circle me-2"> {{colab.name}}
+                        </td>
+                        <td>{{colab.occupation}}<br/><span class="small-letter">{{colab.rank}}</span></td>
+                        <td>{{colab.localization}}<br/><span class="small-letter">{{colab.country}}</span></td>
+                        <td><span [ngClass]="{'active': colab.status == 'ACTIVE', 
+                            'license' : colab.status === 'LICENSE',
+                            'inactive' : colab.status === 'INACTIVE' }">{{colab.status}}</span></td>
+                        <td>
+                            <span class="material-icons-outlined">more_vert</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

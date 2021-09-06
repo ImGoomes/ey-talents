@@ -9,6 +9,9 @@ import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { ColaboradoresComponent } from './colaboradores/colaboradores.component';
+import { ColaboradoresService } from './services/colaboradores.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,17 +19,19 @@ import { NgxEchartsModule } from 'ngx-echarts';
     MenuComponent,
     HeaderComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    ColaboradoresComponent
   ],
   imports: [
     BrowserModule,
     BootstrapModule,
     AppRoutingModule,
+    HttpClientModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })
   ],
-  providers: [],
+  providers: [ColaboradoresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

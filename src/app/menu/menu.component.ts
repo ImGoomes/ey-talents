@@ -7,11 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  public route: string = "";
 
-  constructor(private _router: Router ) {}
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
-    console.log(this._router.url)
+    this.route = this._router.url.replace("/", "");
+  }
+
+  navigate(url: string) {
+    this._router.navigateByUrl(url);
   }
 
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ColaboradoresComponent } from './colaboradores/colaboradores.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 
@@ -11,9 +12,7 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
-
       }
-
     ]
   },
   {
@@ -23,9 +22,17 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
-
       }
-
+    ]
+  },
+  {
+    path: 'colaboradores',
+    component: ColaboradoresComponent,
+    children: [
+      {
+        path: 'colaboradores',
+        component: ColaboradoresComponent,
+      }
     ]
   },
 ];

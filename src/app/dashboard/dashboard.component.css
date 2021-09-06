@@ -13,8 +13,12 @@
     color: #3E4E6A;
 }
 
+h1,
+h2,
 h3,
-h5 {
+h4,
+h5,
+h6 {
     font-family: 'Mulish', sans-serif;
 }
 
@@ -26,7 +30,7 @@ h5 {
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
-    border: 2px solid #dfe0eb;
+    border: 1px solid #dfe0eb;
     background-color: #FFF;
     text-align: center;
     padding: 1em;
@@ -66,7 +70,7 @@ h5 {
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
-    border: 2px solid #dfe0eb;
+    border: 1px solid #dfe0eb;
     background-color: #FFF;
     padding: 1em;
     /* margin-right: 8.5em; */

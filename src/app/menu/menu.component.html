@@ -8,19 +8,19 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a class="nav-link active-menu" aria-current="page">
+                        <a [ngClass]="this.route == 'dashboard' ? 'nav-link active-menu' : 'nav-link text-white'" aria-current="page" (click)="navigate('dashboard')">
                             <span class="material-icons bi me-2">analytics</span><span class="menu-color">Dashboard</span>
                         </a>
                     </li>
                     <hr class="menu-color">
                     <li class="nav-item">
-                        <a class="nav-link text-white">
+                        <a [ngClass]="this.route == 'colaboradores' ? 'nav-link active-menu' : 'nav-link text-white'" (click)="navigate('colaboradores')">
                             <span class="material-icons bi me-2">groups</span><span class="menu-color">Colaboradores</span>
                         </a>
                     </li>
                     <hr class="menu-color">
                     <li class="nav-item">
-                        <a class="nav-link text-white">
+                        <a [ngClass]="this.route == 'configuracoes' ? 'nav-link active-menu' : 'nav-link text-white'" (click)="navigate('configuracoes')">
                             <span class="material-icons bi me-2">settings</span><span class="menu-color">Configurações</span>
                         </a>
                     </li>

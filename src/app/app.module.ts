@@ -14,6 +14,9 @@ import { ColaboradoresService } from './services/colaboradores.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardService } from './services/dashboard.service';
 import { ShortNumber } from './pipes/short-number.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,9 +33,13 @@ import { ShortNumber } from './pipes/short-number.pipe';
     BootstrapModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
-    })
+    }),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     ColaboradoresService,

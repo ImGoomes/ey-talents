@@ -4,16 +4,16 @@
         <div class="row">
             <div class="col-8 form-login">
                 <div class="text-center">
-                    <form class="form-signin" autocomplete="off">
+                    <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
                         <img class="mb-4" src="../../assets/img/ey_logo.png" alt="Logo EY Talents">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control input-login" placeholder="Email" autocomplete="new-password">
+                            <input type="text" class="form-control input-login" placeholder="Usuário" autocomplete="new-password" formControlName="Email">
                             <div class="input-group-append">
-                                <span class="input-group-text material-icons-outlined icon">email</span>
+                                <span class="input-group-text material-icons-outlined icon">person</span>
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control input-login" placeholder="Senha" autocomplete="new-password">
+                            <input type="password" class="form-control input-login" placeholder="Senha" autocomplete="new-password" formControlName="Password">
                             <div class="input-group-append">
                                 <span class="input-group-text material-icons-outlined icon">lock</span>
                             </div>
@@ -21,7 +21,7 @@
                         <div class="mb-3 esq-senha">
                             <a href="#"> Esqueceu a senha? </a>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block btn-login" type="submit">Entrar</button>
+                        <button class="btn btn-lg btn-primary btn-block btn-login" [disabled]="!loginForm.valid">Entrar</button>
                     </form>
                 </div>
             </div>

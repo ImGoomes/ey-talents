@@ -1,0 +1,77 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="ml-25 row">
+    <div class="col">
+        <div class="title">
+            <h3>Dados do Colaborador</h3>
+        </div>
+    </div>
+    <form class="form-signin" [formGroup]="dadosForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="mb-3 col-3">
+                <label>Nome:</label>
+                <input type="text" class="form-control input-login" placeholder="Nome" formControlName="Name">
+            </div>
+            <div class="mb-3 col-3">
+                <label>Gênero:</label>
+                <input type="text" class="form-control input-login" placeholder="Gênero" formControlName="Gender">
+            </div>
+            <div class="mb-3 col-3">
+                <label>Remuneração (R$):</label>
+                <input type="text" class="form-control input-login" placeholder="Remuneração" formControlName="Salary">
+            </div>
+            <div class="mb-3 col-3">
+                <label>Data contratação:</label>
+                <input type="text" class="form-control input-login" placeholder="Data contratação" formControlName="HiringDate" [disabled]="true">
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-3">
+                <label>Localização:</label>
+                <input type="text" class="form-control input-login" placeholder="Localização" formControlName="Localization">
+            </div>
+            <div class="mb-3 col-3">
+                <label>Cargo:</label>
+                <select class="form-control" formControlName="Occupation">
+                  <option value="Analista Pleno">Analista Pleno</option>
+                  <option value="Analista Senior">Analista Senior</option>
+                  <option value="Diretor">Diretor</option>
+                  <option value="Especialista">Especialista</option>
+                  <option value="Gerente">Gerente</option>
+                  <option value="Gerente Sênior">Gerente Sênior</option>
+                </select>
+            </div>
+            <div class="mb-3 col-3">
+                <label>Rank atual:</label>
+                <input type="text" class="form-control input-login" placeholder="Rank atual" formControlName="Rank">
+            </div>
+            <div class="mb-3 col-3">
+                <label>SMU:</label>
+                <input type="text" class="form-control input-login" placeholder="SMU" formControlName="Smu">
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-3">
+                <label>Lead atual:</label>
+                <input type="text" class="form-control input-login" placeholder="Lead atual" formControlName="Lead">
+            </div>
+            <div class="mb-3 col-3">
+                <label>Promoção:</label>
+                <input type="text" class="form-control input-login" placeholder="Promoção" formControlName="Promotion">
+            </div>
+            <div class="mb-3 col-3">
+                <label>Status:</label>
+                <select class="form-control" formControlName="Status">
+                  <option value="ACTIVE">Active</option>
+                  <option value="INACTIVE">Inactive</option>
+                  <option value="LICENSE">License</option>
+                </select>
+            </div>
+            <div class="mb-3 col-6">
+                <label>Observações:</label>
+                <textarea type="text" class="form-control input-login" placeholder="Observações" formControlName="Observations"></textarea>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-warning btn-block btn-salvar" [disabled]="!dadosForm.valid">Salvar</button>
+    </form>
+</div>

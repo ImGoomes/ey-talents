@@ -19,6 +19,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetalhesColaboradoresComponent } from './colaboradores/detalhes-colaboradores/detalhes-colaboradores.component';
 import { HotskillsComponent } from './hotskills/hotskills.component';
+import { DadosColaboradoresComponent } from './colaboradores/dados-colaboradores/dados-colaboradores.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HotskillsComponent } from './hotskills/hotskills.component';
     ColaboradoresComponent,
     ShortNumber,
     DetalhesColaboradoresComponent,
-    HotskillsComponent
+    HotskillsComponent,
+    DadosColaboradoresComponent
   ],
   imports: [
     BrowserModule,

@@ -13,4 +13,8 @@ export class ColaboradoresService {
   getColaboradores(): Observable<any[]> {
     return this._http.get<any[]>(environment.jsonServerAPI + "employees");
   }
+
+  updateColaboradores(colaboradores: string, id: number): Observable<any[]> {
+    return this._http.patch<any>(environment.jsonServerAPI + "employees/" + id, JSON.stringify(colaboradores));
+  }
 }

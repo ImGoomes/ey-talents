@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ColaboradoresService } from '../services/colaboradores.service';
 
 @Component({
@@ -8,15 +9,20 @@ import { ColaboradoresService } from '../services/colaboradores.service';
 })
 export class ColaboradoresComponent implements OnInit {
   public colaboradores: any;
-  constructor(private _service: ColaboradoresService) { }
+  constructor(
+    private _service: ColaboradoresService,
+    private _router: Router) { }
 
   ngOnInit(): void {
     this._service.getColaboradores().subscribe(
       (dados) => {
         this.colaboradores = dados;
-        console.log(this.colaboradores);
-
       });
+  }
+
+  detalhes(colaborador: any) {
+    localStorage.setItem('colaborador', JSON.stringify(colaborador));
+    this._router.navigateByUrl('/detalhes')
   }
 
 }

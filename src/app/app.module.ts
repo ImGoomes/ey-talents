@@ -17,6 +17,7 @@ import { ShortNumber } from './pipes/short-number.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DetalhesColaboradoresComponent } from './colaboradores/detalhes-colaboradores/detalhes-colaboradores.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     LoginComponent,
     ColaboradoresComponent,
-    ShortNumber
+    ShortNumber,
+    DetalhesColaboradoresComponent
   ],
   imports: [
     BrowserModule,

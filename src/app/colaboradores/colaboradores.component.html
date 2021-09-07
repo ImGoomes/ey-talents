@@ -37,7 +37,7 @@
                             'license' : colab.status === 'LICENSE',
                             'inactive' : colab.status === 'INACTIVE' }">{{colab.status}}</span></td>
                         <td>
-                            <span class="material-icons-outlined">more_vert</span>
+                            <span class="material-icons-outlined" (click)="detalhes(colab)">more_vert</span>
                         </td>
                     </tr>
                 </tbody>

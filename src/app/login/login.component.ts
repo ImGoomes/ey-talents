@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger
     if (this.loginForm.valid) {
       this.loginForm.disable();
       this._service.getUsers().subscribe((user) => {

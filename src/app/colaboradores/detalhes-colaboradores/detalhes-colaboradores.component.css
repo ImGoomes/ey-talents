@@ -1,0 +1,85 @@
+.ml-25 {
+    margin-left: 25%
+}
+
+.title {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.title h3 {
+    color: #3E4E6A;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Mulish', sans-serif;
+}
+
+.content {
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 1px solid #dfe0eb;
+    background-color: #FFF;
+    padding: 1em;
+    /* margin-right: 8.5em; */
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+.content h5 {
+    color: #252733;
+}
+
+.me-2 {
+    margin-left: 0.3em;
+    border: 1.5px solid #DFE0EB;
+}
+
+.infos {
+    padding-top: 2em;
+}
+
+label {
+    font-size: 0.8rem;
+    color: #252733
+}
+
+hr {
+    color: #dfe0eb;
+}
+
+.observativon {
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 1px solid #dfe0eb;
+    background-color: #FFF;
+    padding: 1em;
+}
+
+.table {
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 1px solid #dfe0eb;
+    background-color: #FFF;
+    padding: 1em;
+}
+
+.table label {
+    padding-bottom: 1em;
+}
+
+.grey-font {
+    color: #9FA2B4;
+}
+
+.list-group-item {
+    font-size: 0.8rem;
+}

@@ -1,0 +1,91 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="ml-25 row">
+    <div class="col">
+        <div class="title">
+            <h3>Informações do Colaborador</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col content">
+            <div class="row">
+                <div class="col-3">
+                    <img src="{{this.colaborador.picture}}" alt="" width="195" height="195" class="rounded-circle me-2">
+                </div>
+                <div class="col-9">
+                    <div class="row infos">
+                        <div class="col">
+                            <label class="grey-font">Nome:</label>
+                            <label>{{this.colaborador.name}}</label>
+                        </div>
+                        <div class="col">
+                            <label class="grey-font">Gênero:</label><br/>
+                            <label>{{this.colaborador.gender === 'f' ? 'Feminino' : 'Masculino' }}</label>
+                        </div>
+                        <div class="col">
+                            <label class="grey-font">Remuneração:</label>
+                            <label>{{this.colaborador.salary | currency: 'BRL'}}</label>
+                        </div>
+                        <div class="col">
+                            <label class="grey-font">Data contratação:</label>
+                            <label>{{this.colaborador.hiringDate}}</label>
+                        </div>
+                        <div class="col">
+                            <label class="grey-font">Localização:</label>
+                            <label>{{this.colaborador.localization}} - {{this.colaborador.country}}</label>
+                        </div>
+                    </div>
+                    <div class="row infos">
+                        <div class="col">
+                            <label class="grey-font">Cargo:</label>
+                            <label>{{this.colaborador.occupation}}</label>
+                        </div>
+                        <div class="col">
+                            <label class="grey-font">Rank atual:</label>
+                            <label>{{this.colaborador.rank}}</label>
+                        </div>
+                        <div class="col">
+                            <label class="grey-font">SMU:</label>
+                            <label>{{this.colaborador.smu}}</label>
+                        </div>
+                        <div class="col">
+                            <label class="grey-font">Lead atual:</label><br/>
+                            <label>{{this.colaborador.lead}}</label>
+                        </div>
+                        <div class="col">
+                            <label class="grey-font">Promoção:</label>
+                            <label>{{this.colaborador.promotion}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <div class="observativon">
+                        <h6>Observações</h6>
+                        <label>{{this.colaborador.observations}}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="table">
+                        <h6>Projetos</h6>
+                        <label class="grey-font">Total(5)</label>
+                        <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let proj of this.colaborador.projects">{{proj}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="table">
+                        <h6>Skills</h6>
+                        <label class="grey-font">Total(5)</label>
+                        <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let skill of this.colaborador.skills">{{skill}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

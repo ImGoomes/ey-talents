@@ -139,3 +139,11 @@ hr {
     padding: 0.4em 1em 0.4em 1em;
     background-color: #FEC400;
 }
+
+.link {
+    color: #9FA2B4;
+    font-size: 0.8rem;
+    padding-left: 28%;
+    position: absolute;
+    cursor: pointer;
+}

@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetalhesColaboradoresComponent } from './colaboradores/detalhes-colaboradores/detalhes-colaboradores.component';
+import { HotskillsComponent } from './hotskills/hotskills.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DetalhesColaboradoresComponent } from './colaboradores/detalhes-colabor
     LoginComponent,
     ColaboradoresComponent,
     ShortNumber,
-    DetalhesColaboradoresComponent
+    DetalhesColaboradoresComponent,
+    HotskillsComponent
   ],
   imports: [
     BrowserModule,

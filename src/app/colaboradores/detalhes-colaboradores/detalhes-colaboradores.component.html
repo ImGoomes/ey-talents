@@ -14,6 +14,9 @@
                     <img src="{{this.colaborador.picture}}" alt="" width="195" height="195" class="rounded-circle me-2">
                 </div>
                 <div class="col-9">
+                    <span [ngClass]="{'active': this.colaborador.status == 'ACTIVE', 
+                    'license' : this.colaborador.status === 'LICENSE',
+                    'inactive' : this.colaborador.status === 'INACTIVE' }">{{this.colaborador.status}}</span>
                     <div class="row infos">
                         <div class="col">
                             <label class="grey-font">Nome:</label>
@@ -71,7 +74,7 @@
                 <div class="col-4">
                     <div class="table">
                         <h6>Projetos</h6>
-                        <label class="grey-font">Total(5)</label>
+                        <label class="grey-font">Total({{this.colaborador.projects.length}})</label>
                         <ul class="list-group">
                             <li class="list-group-item" *ngFor="let proj of this.colaborador.projects">{{proj}}</li>
                         </ul>
@@ -80,7 +83,7 @@
                 <div class="col-4">
                     <div class="table">
                         <h6>Skills</h6>
-                        <label class="grey-font">Total(5)</label>
+                        <label class="grey-font">Total({{this.colaborador.skills.length}})</label>
                         <ul class="list-group">
                             <li class="list-group-item" *ngFor="let skill of this.colaborador.skills">{{skill}}</li>
                         </ul>

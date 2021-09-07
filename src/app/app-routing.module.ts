@@ -4,6 +4,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { ColaboradoresComponent } from './colaboradores/colaboradores.component';
 import { DetalhesColaboradoresComponent } from './colaboradores/detalhes-colaboradores/detalhes-colaboradores.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HotskillsComponent } from './hotskills/hotskills.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -42,11 +43,22 @@ const routes: Routes = [
   {
     path: 'detalhes',
     component: DetalhesColaboradoresComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'detalhes',
         component: DetalhesColaboradoresComponent,
+      }
+    ]
+  },
+  {
+    path: 'hotskills',
+    component: HotskillsComponent,
+    // canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'hotskills',
+        component: HotskillsComponent,
       }
     ]
   },

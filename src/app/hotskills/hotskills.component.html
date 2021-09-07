@@ -1,0 +1,35 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="ml-25 row">
+    <div class="col">
+        <div class="title">
+            <h3>Hotskills</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col table-content">
+            <h5>Hotskills - Busca de mercado</h5>
+            <span class="small-letter">Critérios: Skills compatíveis com busca de mercado</span>
+            <div class="row" *ngIf="!this.hotskills || this.hotskills.length <= 0">
+                <div class="spinner-border text-warning" role="status">
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Skill</th>
+                        <th scope="col">Porcentagem</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let hotskill of this.hotskills">
+                        <td>{{hotskill.title}}</td>
+                        <td>{{hotskill.rate}}%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

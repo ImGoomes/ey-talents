@@ -20,16 +20,18 @@
                     </li>
                     <hr class="menu-color">
                     <li class="nav-item">
+                        <a [ngClass]="this.route == 'hotskills' ? 'nav-link active-menu' : 'nav-link text-white'" (click)="navigate('hotskills')">
+                            <span class="material-icons bi me-2">local_fire_department</span><span class="menu-color">Hotskills</span>
+                        </a>
+                    </li>
+                    <hr class="menu-color">
+                    <li class="nav-item">
                         <a [ngClass]="this.route == 'configuracoes' ? 'nav-link active-menu' : 'nav-link text-white'" (click)="navigate('configuracoes')">
                             <span class="material-icons bi me-2">settings</span><span class="menu-color">Configurações</span>
                         </a>
                     </li>
                 </ul>
                 <div class="dropdown">
-                    <!-- <a href="#" class="d-flex align-items-center text-white text-decoration-none">
-            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong>mdo</strong>
-        </a> -->
                     <hr class="line">
                     <a class="nav-link text-white" (click)="navigate('login')">
                         <span class="material-icons bi me-2" width="16" height="16">logout</span><span class="menu-color">Sair</span>

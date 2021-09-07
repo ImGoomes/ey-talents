@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EChartsOption } from 'echarts';
 import { ColaboradoresService } from '../services/colaboradores.service';
 import { DashboardService } from '../services/dashboard.service';
@@ -21,7 +22,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private _serviceDash: DashboardService,
     private _serviceColab: ColaboradoresService,
-    private _serviceHotskill: HotskillService) { }
+    private _serviceHotskill: HotskillService,
+    private _router: Router) { }
 
   ngOnInit(): void {
     //Dashboard
@@ -102,4 +104,7 @@ export class DashboardComponent implements OnInit {
     ]
   };
 
+  navigate(url: string) {
+    this._router.navigateByUrl(url);
+  }
 }

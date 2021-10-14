@@ -26,6 +26,12 @@
                     </li>
                     <hr class="menu-color">
                     <li class="nav-item">
+                        <a [ngClass]="this.route == 'configuracoes' ? 'nav-link active-menu' : 'nav-link text-white'">
+                            <span class="material-icons bi me-2">upload_file</span><span class="menu-color">Upload de dados</span>
+                        </a>
+                    </li>
+                    <hr class="menu-color">
+                    <li class="nav-item">
                         <a [ngClass]="this.route == 'configuracoes' ? 'nav-link active-menu' : 'nav-link text-white'" (click)="navigate('configuracoes')">
                             <span class="material-icons bi me-2">settings</span><span class="menu-color">Configurações</span>
                         </a>
